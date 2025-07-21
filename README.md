@@ -1,2 +1,3 @@
 # PlutoSploit
-KAH Script, 100% Lua Based
+**Kohls Admin House Roblox Exploit**
+Pretty old but whatever.
